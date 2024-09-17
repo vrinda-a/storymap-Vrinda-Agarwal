@@ -20,7 +20,7 @@ Mapbox access token
 - No need change anything
 
 `map.js`
-- You only need to replace the map.addLayer({...}) part with your own map layers and id names. Customise how they appear (colour etc.).
+- You only need to replace the `map.addLayer({...})` part with your own map layers and id names. Customise how they appear (colour etc.).
   
 `config.js`
 - This file needs the most modification
