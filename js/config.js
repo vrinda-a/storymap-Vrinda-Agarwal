@@ -63,7 +63,7 @@ var config = {
     style: "mapbox://styles/mapbox/light-v11",
 
     // Replace this with your own Mapbox token!
-    accessToken: "pk.eyJ1IjoiYnlyb25ubiIsImEiOiJjbTE1c2M5ZGswYmRxMnRvbnl0Mmw1NDFiIn0.jWMkIPu68E9-Bezda3lAlQ",
+    accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFkdXowNDkwNzc2MmpxNG9oYWc0YmNsIn0.NRwsd6tNNJfwUPmsPKHANg",
     showMarkers: false,
     markerColor: "#242422",
     theme: "light",
