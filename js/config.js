@@ -67,7 +67,7 @@ MAP AND TRANSITIONS - THE MAIN CONFIGURATION SECTION
 
 var config = {
     // Map style
-    style: "https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css", 
+    style: "mapbox://styles/agarvrinda/cm1e78hgd012i01pd03l59ug2", 
     // Mapbox token
     accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFoeTViY2swbDIyMmxweHo3dnNiNnBmIn0.hp7xaGIu8Y7Q-RVwVG2YrA",
     showMarkers: false,
