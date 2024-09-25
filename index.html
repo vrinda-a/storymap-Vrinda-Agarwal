@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8' />
-    <title>Template for storymap</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-   
-    <!-- Add the Mapbox GL JS CSS and JS files -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css' rel='stylesheet' />
-    
-    <!-- Add the Intersection Observer and Scrollama JS files -->
-    <script src="https://unpkg.com/intersection-observer@0.12.2/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journey of the Ganga River</title>
 
-    <!-- Add the Roboto font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
-    <!-- Add my own style.css file -->
-    <link rel="stylesheet" href="./css/style.css">
+  <!-- Link to Mapbox CSS for map styling -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+
+  <!-- Link to the custom style.css for page styling -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Scrollama for handling the scroll-driven storytelling interaction -->
+  <script src="https://unpkg.com/scrollama"></script>
+
+  <!-- Link to Google Fonts for font styling (Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Inline fallback styles in case external CSS doesn't load */
+    body { font-family: 'Roboto', sans-serif; margin: 0; }
+  </style>
 </head>
 
 <body>
 
-    <!-- The HTML body is comprised of two components: map and story -->
-    <!-- The map div holds the map itself -->
-    <div id="map"></div>
+  <!-- Header Section: Title, byline, and introduction -->
+  <div id="header"></div>
 
-    <!-- While the story div holds everything on top of the map, 
-     such as the title, the individual chapters, and the footer -->
-    <div id='story'></div>
+  <!-- Map container that will hold the Mapbox map -->
+  <div id="map"></div>
 
-    <!-- The config.js file contains the configuration settings for the story map,
-     and the text/media content of each chapter -->
-    <script src='./js/config.js'></script>
+  <!-- Story container for the scrolling content (chapters) -->
+  <div id="story">
+    <div id="features"></div>
+  </div>
 
-    <!-- The map.js file contains the code to generate the map and slap the story on top-->
-    <script src="./js/map.js"></script>
+  <!-- Footer Section: Any credits or conclusion content -->
+  <div id="footer"></div>
+
+  <!-- Mapbox JS for map functionalities -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+
+  <!-- Link to the custom config.js for chapter content and map configuration -->
+  <script src="./config.js"></script>
+
+  <!-- Link to the custom map.js for managing map interactions and scroll behavior -->
+  <script src="./map.js"></script>
 
 </body>
 </html>
