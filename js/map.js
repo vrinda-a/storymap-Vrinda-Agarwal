@@ -180,7 +180,7 @@ map.on("load", function () {
     type: "circle",
     source: {
       type: "geojson",
-      data: "./data/mapdata.geojson", // GeoJSON file for major cities (points)
+      data: "./data/mapGanga.geojson", // GeoJSON file for major cities (points)
     },
     paint: {
       "circle-color": "#FF5733", 
