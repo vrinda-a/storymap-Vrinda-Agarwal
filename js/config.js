@@ -5,7 +5,7 @@ HEADER SECTION
 
 let topTitleDiv = "<h4>The Journey of the Ganga River</h4>";
 let titleDiv = "<h1>Exploring the Ganga: From Origin to Impact</h1>";
-let bylineDiv = "<p>By [Your Name]<br>September 2024</p>";
+let bylineDiv = "<p>By Vrinda Agarwal <br> September 2024</p>";
 let descriptionDiv = `
 <p>Welcome to this interactive story map that traces the journey of the Ganga River, exploring its significance, pollution, and the major cities it touches. Scroll down to follow its flow from the Himalayas to the Bay of Bengal.</p>
 <div style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto">
@@ -67,9 +67,9 @@ MAP AND TRANSITIONS - THE MAIN CONFIGURATION SECTION
 
 var config = {
     // Map style
-    style: "mapbox://styles/agarvrinda/cm1e78hgd012i01pd03l59ug2", // ADDED COMMA HERE
+    style: "https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css", 
     // Mapbox token
-    accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFkdXowNDkwNzc2MmpxNG9oYWc0YmNsIn0.NRwsd6tNNJfwUPmsPKHANg",
+    accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFoeTViY2swbDIyMmxweHo3dnNiNnBmIn0.hp7xaGIu8Y7Q-RVwVG2YrA",
     showMarkers: false,
     markerColor: "#FF5733",
     theme: "light",
