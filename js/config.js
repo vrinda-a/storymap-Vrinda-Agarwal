@@ -1,26 +1,17 @@
 /*
-Welcome to the config.js file
-It holds the actual content of chapters, the transitions, and other
-important information for the storymap.
-########################################################################
-Contents:
-*/
-
-/*
 ########################################################################
 HEADER SECTION
 */
-let topTitleDiv = "<h4>Template</h4>";
-let titleDiv = "<h1>Storymap template</h1>";
-let bylineDiv = "<p>Name<br>Date</p>";
+
+let topTitleDiv = "<h4>The Journey of the Ganga River</h4>";
+let titleDiv = "<h1>Exploring the Ganga: From Origin to Impact</h1>";
+let bylineDiv = "<p>By [Your Name]<br>September 2024</p>";
 let descriptionDiv = `
-<p>Welcome!</p>
-<p>You can insert images:</q>
+<p>Welcome to this interactive story map that traces the journey of the Ganga River, exploring its significance, pollution, and the major cities it touches. Scroll down to follow its flow from the Himalayas to the Bay of Bengal.</p>
 <div style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto">
-  <img src="./data/images/your_image.png" alt="Image caption" style="max-width:75%; height:auto;">
+  <img src="./data/images/ganga.jpg" alt="Ganga River" style="max-width:75%; height:auto;">
 </div>
-<p><em>Above: an image.</em></p>
-<p><br></p>
+<p><em>Above: The Ganga River flowing through Haridwar</em></p>
 <p style="text-align:center">Scroll to continue<br>▼</p>
 `;
 
@@ -29,19 +20,34 @@ let descriptionDiv = `
 CHAPTERS
 */
 
+// Chapter 1: The Origin of the Ganga (Gangotri)
 let divChapter1 =`
-<h3>Title for Chapter 1 - lines</h3>
-<p>Your description here.</p>
+<h3>Chapter 1: The Origin of the Ganga</h3>
+<p>The Ganga River begins its journey at the Gangotri Glacier in the Himalayas. Revered as sacred by millions, the river originates from the Bhagirathi River and flows down through the state of Uttarakhand.</p>
+<div style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto">
+  <img src="./data/images/gangotri.jpg" alt="Gangotri Glacier" style="max-width:75%; height:auto;">
+</div>
+<p><em>Above: Gangotri Glacier, the source of the Ganga River.</em></p>
 `;
 
+// Chapter 2: Major Cities Along the Ganga (Haridwar, Kanpur, Varanasi)
 let divChapter2 =`
-<h3>Title for Chapter 2 - points</h3>
-<p>Your description here.</p>
+<h3>Chapter 2: Cities Along the Ganga</h3>
+<p>As the Ganga River flows through northern India, it passes through important cities like Haridwar, Kanpur, and Varanasi. These cities are centers of spirituality, commerce, and culture, but also major contributors to the pollution in the river.</p>
+<div style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto">
+  <img src="./data/images/varanasi.jpg" alt="Varanasi" style="max-width:75%; height:auto;">
+</div>
+<p><em>Above: Varanasi, one of the holiest cities along the Ganga.</em></p>
 `;
 
+// Chapter 3: Pollution and Challenges
 let divChapter3 =`
-<h3>Title for Chapter 3 - polygons</h3>
-<p>Your description here.</p>
+<h3>Chapter 3: Pollution and Environmental Challenges</h3>
+<p>The Ganga River faces severe pollution from industrial waste, sewage, and religious offerings. Despite government efforts like the Namami Gange program, the river's health continues to deteriorate, impacting the communities that rely on it.</p>
+<div style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto">
+  <img src="./data/images/pollution.jpg" alt="Ganga Pollution" style="max-width:75%; height:auto;">
+</div>
+<p><em>Above: Pollution in the Ganga near Kanpur.</em></p>
 `;
 
 /*
@@ -50,7 +56,8 @@ FOOTER SECTION
 */
 
 let footerDiv = `
-<p>Your footer here.</p>
+<p>Thank you for exploring the Ganga River's journey. From its origin in the Himalayas to the challenges it faces today, the Ganga remains a vital artery of life and culture in India.</p>
+<p><em>Credits: Data sourced from open sources and Mapbox</em></p>
 `;
 
 /*
@@ -59,13 +66,13 @@ MAP AND TRANSITIONS - THE MAIN CONFIGURATION SECTION
 */
 
 var config = {
-    // Change the map style here
+    // Map style
     style: "mapbox://styles/mapbox/light-v11",
 
-    // Replace this with your own Mapbox token!
+    // Mapbox token
     accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFkdXowNDkwNzc2MmpxNG9oYWc0YmNsIn0.NRwsd6tNNJfwUPmsPKHANg",
     showMarkers: false,
-    markerColor: "#242422",
+    markerColor: "#FF5733",
     theme: "light",
     use3dTerrain: false,
     topTitle: topTitleDiv,
@@ -74,18 +81,17 @@ var config = {
     description: descriptionDiv,
     footer: footerDiv,
     chapters: [
-      // CHAPTER 1
-      // ################################################################
+      // CHAPTER 1: Gangotri (River Origin)
       {
         id: "view1",
         alignment: "right",
         hidden: false,
         chapterDiv: divChapter1,
         location: {
-          center: [103.845436, 1.369115], // default center
-          zoom: 11,
-          zoomSmall: 11,
-          pitch: 0,
+          center: [79.05537427874106, 30.98620629908892], // Gangotri
+          zoom: 9,
+          zoomSmall: 9,
+          pitch: 45,
           bearing: 0,
         },
         mapAnimation: "flyTo",
@@ -93,53 +99,102 @@ var config = {
         callback: "",
         onChapterEnter: [
             {
-                layer: "your_line_layer",
+                layer: "river-path-layer",
                 opacity: 1,
                 duration: 300,
             },
             {
-                layer: "your_points_layer",
+                layer: "major-cities-layer",
                 opacity: 0,
                 duration: 300,
             },
             {
-                layer: "your_polygons_layer",
+                layer: "city-circles-layer",
                 opacity: 0,
                 duration: 300,
             },
         ],
         onChapterExit: [
             {
-                layer: "your_line_layer",
+                layer: "river-path-layer",
                 opacity: 1,
                 duration: 300,
             },
             {
-                layer: "your_points_layer",
+                layer: "major-cities-layer",
                 opacity: 0,
                 duration: 300,
             },
             {
-                layer: "your_polygons_layer",
+                layer: "city-circles-layer",
                 opacity: 0,
                 duration: 300,
             },
-          ],
-        },
-        // CHAPTER 2
-        // ################################################################
-        {
+        ],
+      },
+
+      // CHAPTER 2: Cities Along the Ganga
+      {
         id: "view2",
         alignment: "left",
         hidden: false,
-        title: "",
-        image: "",
-        description: "",
         chapterDiv: divChapter2,
         location: {
-          center: [103.723416, 1.332541], // zoom here!
-          zoom: 16,
-          zoomSmall: 14,
+          center: [83.01440579087068, 25.336226431686683], // Varanasi
+          zoom: 12,
+          zoomSmall: 10,
+          pitch: 30,
+          bearing: 0,
+        },
+        mapAnimation: "flyTo",
+        rotateAnimation: false,
+        callback: "",
+        onChapterEnter: [
+            {
+                layer: "river-path-layer",
+                opacity: 0.5,
+                duration: 300,
+            },
+            {
+                layer: "major-cities-layer",
+                opacity: 1,
+                duration: 300,
+            },
+            {
+                layer: "city-circles-layer",
+                opacity: 0.5,
+                duration: 300,
+            },
+        ],
+        onChapterExit: [
+            {
+                layer: "river-path-layer",
+                opacity: 0.5,
+                duration: 300,
+            },
+            {
+                layer: "major-cities-layer",
+                opacity: 1,
+                duration: 300,
+            },
+            {
+                layer: "city-circles-layer",
+                opacity: 0.5,
+                duration: 300,
+            },
+        ],
+      },
+
+      // CHAPTER 3: Pollution and Challenges
+      {
+        id: "view3",
+        alignment: "center",
+        hidden: false,
+        chapterDiv: divChapter3,
+        location: {
+          center: [85.15009100890597, 25.565237625112005], // Kanpur
+          zoom: 11,
+          zoomSmall: 9,
           pitch: 0,
           bearing: 0,
         },
@@ -148,93 +203,38 @@ var config = {
         callback: "",
         onChapterEnter: [
             {
-                layer: "your_line_layer",
-                opacity: 0,
+                layer: "river-path-layer",
+                opacity: 0.3,
                 duration: 300,
             },
             {
-                layer: "your_points_layer",
-                opacity: 1,
+                layer: "major-cities-layer",
+                opacity: 0.3,
                 duration: 300,
             },
             {
-                layer: "your_polygons_layer",
-                opacity: 0,
+                layer: "city-circles-layer",
+                opacity: 0.5,
                 duration: 300,
             },
         ],
         onChapterExit: [
             {
-                layer: "your_line_layer",
-                opacity: 0,
+                layer: "river-path-layer",
+                opacity: 0.3,
                 duration: 300,
             },
             {
-                layer: "your_points_layer",
-                opacity: 1,
+                layer: "major-cities-layer",
+                opacity: 0.3,
                 duration: 300,
             },
             {
-                layer: "your_polygons_layer",
-                opacity: 0,
+                layer: "city-circles-layer",
+                opacity: 0.5,
                 duration: 300,
             },
         ],
-        },
-        // CHAPTER 3
-        // ################################################################
-        {
-            id: "view3",
-            alignment: "left",
-            hidden: false,
-            title: "",
-            image: "",
-            description: "",
-            chapterDiv: divChapter3,
-            location: {
-              center: [103.845436, 1.369115], 
-              zoom: 11,
-              zoomSmall: 11,
-              pitch: 0,
-              bearing: 0,
-            },
-            mapAnimation: "flyTo",
-            rotateAnimation: false,
-            callback: "",
-            onChapterEnter: [
-                {
-                    layer: "your_line_layer",
-                    opacity: 0,
-                    duration: 300,
-                },
-                {
-                    layer: "your_points_layer",
-                    opacity: 0,
-                    duration: 300,
-                },
-                {
-                    layer: "your_polygons_layer",
-                    opacity: 1,
-                    duration: 300,
-                },
-            ],
-            onChapterExit: [
-                {
-                    layer: "your_line_layer",
-                    opacity: 0,
-                    duration: 300,
-                },
-                {
-                    layer: "your_points_layer",
-                    opacity: 0,
-                    duration: 300,
-                },
-                {
-                    layer: "your_polygons_layer",
-                    opacity: 1,
-                    duration: 300,
-                },
-            ],
-          },
-
-    ]};
+      },
+    ],
+};
