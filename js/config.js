@@ -67,7 +67,7 @@ MAP AND TRANSITIONS - THE MAIN CONFIGURATION SECTION
 
 var config = {
     // Map style
-    style: "mapbox://styles/agarvrinda/cm1e78hgd012i01pd03l59ug2"
+    style: "mapbox://styles/agarvrinda/cm1e78hgd012i01pd03l59ug2", // ADDED COMMA HERE
     // Mapbox token
     accessToken: "pk.eyJ1IjoiYWdhcnZyaW5kYSIsImEiOiJjbTFkdXowNDkwNzc2MmpxNG9oYWc0YmNsIn0.NRwsd6tNNJfwUPmsPKHANg",
     showMarkers: false,
