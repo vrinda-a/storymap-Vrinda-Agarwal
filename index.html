@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Journey of the Ganga River</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journey of the Ganga River</title>
 
-<!-- Link to Mapbox CSS for map styling -->
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js" rel="stylesheet" />
+  <!-- Link to Mapbox CSS for map styling -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
 
-<!-- Link to the custom style.css for page styling -->
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <!-- Link to the custom style.css for page styling -->
+  <link rel="stylesheet" href="css/style.css">
 
-<!-- Scrollama for handling the scroll-driven storytelling interaction -->
-<script src="https://unpkg.com/scrollama"></script>
+  <!-- Scrollama for handling the scroll-driven storytelling interaction -->
+  <script src="https://unpkg.com/scrollama"></script>
 
-<!-- Link to Google Fonts for font styling (Roboto) -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link to Google Fonts for font styling (Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Inline fallback styles in case external CSS doesn't load */
-body { font-family: 'Roboto', sans-serif; margin: 0; }
-</style>
+  <style>
+    /* Inline fallback styles in case external CSS doesn't load */
+    body { font-family: 'Roboto', sans-serif; margin: 0; }
+  </style>
 </head>
 
 <body>
 
-<!-- Header Section: Title, byline, and introduction -->
-<div id="header"></div>
+  <!-- Header Section: Title, byline, and introduction -->
+  <div id="header"></div>
 
-<!-- Map container that will hold the Mapbox map -->
-<div id="map"></div>
+  <!-- Map container that will hold the Mapbox map -->
+  <div id="map"></div>
 
-<!-- Story container for the scrolling content (chapters) -->
-<div id="story">
-<div id="features"></div>
-</div>
+  <!-- Story container for the scrolling content (chapters) -->
+  <div id="story">
+    <div id="features"></div>
+  </div>
 
-<!-- Footer Section: Any credits or conclusion content -->
-<div id="footer"></div>
+  <!-- Footer Section: Any credits or conclusion content -->
+  <div id="footer"></div>
 
-<!-- Mapbox JS for map functionalities -->
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+  <!-- Mapbox JS for map functionalities -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
 
-<!-- Link to the custom config.js for chapter content and map configuration -->
-<script src="./js/config.js"></script>
+  <!-- Link to the custom config.js for chapter content and map configuration -->
+  <script src="js/config.js"></script>
 
-<!-- Link to the custom map.js for managing map interactions and scroll behavior -->
-<script src="./js/map.js"></script>
+  <!-- Link to the custom map.js for managing map interactions and scroll behavior -->
+  <script src="js/map.js"></script>
 
 </body>
 </html>
